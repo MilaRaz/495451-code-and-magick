@@ -1,72 +1,72 @@
 'use strict';
 
 window.renderStatistics = function (ctx, names, times) {
-    var drawShadow = function () {
-        ctx.beginPath();
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
-        ctx.strokeRect(110, 20, 420, 270);
-        ctx.fillRect(110, 20, 420, 270);
-        ctx.arc(110, 125, 35, 0, Math.PI * 2, false);
-        ctx.arc(110, 55, 35, 0, Math.PI * 2, false);
-        ctx.arc(110, 195, 35, 0, Math.PI * 2, false);
-        ctx.arc(110, 265, 35, 0, Math.PI * 2, false);
-        ctx.fill();
-        ctx.beginPath();
-        ctx.arc(530, 55, 35, 0, Math.PI * 2, false);
-        ctx.arc(530, 125, 35, 0, Math.PI * 2, false);
-        ctx.arc(530, 195, 35, 0, Math.PI * 2, false);
-        ctx.arc(530, 265, 35, 0, Math.PI * 2, false);
-        ctx.fill();
-    };
-    drawShadow()
+  var drawShadow = function () {
+    ctx.beginPath();
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+    ctx.strokeRect(110, 20, 420, 270);
+    ctx.fillRect(110, 20, 420, 270);
+    ctx.arc(110, 125, 35, 0, Math.PI * 2, false);
+    ctx.arc(110, 55, 35, 0, Math.PI * 2, false);
+    ctx.arc(110, 195, 35, 0, Math.PI * 2, false);
+    ctx.arc(110, 265, 35, 0, Math.PI * 2, false);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(530, 55, 35, 0, Math.PI * 2, false);
+    ctx.arc(530, 125, 35, 0, Math.PI * 2, false);
+    ctx.arc(530, 195, 35, 0, Math.PI * 2, false);
+    ctx.arc(530, 265, 35, 0, Math.PI * 2, false);
+    ctx.fill();
+  };
+  drawShadow();
 
-    var drawCloud = function () {
-        ctx.beginPath();
-        ctx.fillStyle = 'rgba(256, 256, 256, 1.0)';
-        ctx.strokeRect(100, 10, 420, 270);
-        ctx.fillRect(100, 10, 420, 270);
-        ctx.arc(100, 115, 35, 0, Math.PI * 2, false);
-        ctx.arc(100, 45, 35, 0, Math.PI * 2, false);
-        ctx.arc(100, 185, 35, 0, Math.PI * 2, false);
-        ctx.arc(100, 255, 35, 0, Math.PI * 2, false);
-        ctx.fill();
-        ctx.beginPath();
-        ctx.arc(520, 45, 35, 0, Math.PI * 2, false);
-        ctx.arc(520, 115, 35, 0, Math.PI * 2, false);
-        ctx.arc(520, 185, 35, 0, Math.PI * 2, false);
-        ctx.arc(520, 255, 35, 0, Math.PI * 2, false);
-        ctx.fill();
-    };
-    drawCloud()
+  var drawCloud = function () {
+    ctx.beginPath();
+    ctx.fillStyle = 'rgba(256, 256, 256, 1.0)';
+    ctx.strokeRect(100, 10, 420, 270);
+    ctx.fillRect(100, 10, 420, 270);
+    ctx.arc(100, 115, 35, 0, Math.PI * 2, false);
+    ctx.arc(100, 45, 35, 0, Math.PI * 2, false);
+    ctx.arc(100, 185, 35, 0, Math.PI * 2, false);
+    ctx.arc(100, 255, 35, 0, Math.PI * 2, false);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(520, 45, 35, 0, Math.PI * 2, false);
+    ctx.arc(520, 115, 35, 0, Math.PI * 2, false);
+    ctx.arc(520, 185, 35, 0, Math.PI * 2, false);
+    ctx.arc(520, 255, 35, 0, Math.PI * 2, false);
+    ctx.fill();
+  };
+  drawCloud();
 
-    ctx.fillStyle = '#000'; // black;
-    ctx.font = '16px PT Mono';
+  ctx.fillStyle = '#000'; // black;
+  ctx.font = '16px PT Mono';
 
-    ctx.fillText('Ура вы победили!', 120, 40);
-    ctx.fillText('Список результатов:', 120, 60);
-    var max = -1;
-    var getMaxValue = function (arr) {
-
-
-        for (var i = 0; i < times.length; i++) {
-            var time = times[i];
-            if (time > max) {
-                max = time;
-            }
-        }
-        return max;
-    };
-    getMaxValue()
-
-    var histogramWidth = 150; // px;
-    var step = histogramWidth / (0 - max); // px;
+  ctx.fillText('Ура вы победили!', 120, 40);
+  ctx.fillText('Список результатов:', 120, 60);
+  var max = -1;
+  var getMaxValue = function (Array) {
 
 
-    var barHeigth = 40; // px; 
-    var indent = 90; // px;
-    var initialX = 270; // px;
-    var initialY = 130; // px;
-    var lineHeight = 15; // px;
+    for (var i = 0; i < times.length; i++) {
+      var time = times[i];
+      if (time > max) {
+        max = time;
+      }
+    }
+  return max;
+};
+getMaxValue();
+
+  var histogramWidth = 150; // px;
+  var step = histogramWidth / (0 - max); // px;
+
+
+  var barHeigth = 40; // px; 
+  var indent = 90; // px;
+  var initialX = 270; // px;
+  var initialY = 130; // px;
+  var lineHeight = 15; // px;
 
 
 

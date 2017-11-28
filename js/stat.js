@@ -45,6 +45,7 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Ура вы победили!', 120, 40);
   ctx.fillText('Список результатов:', 120, 60);
   var max = -1;
+  var Array;    
   var getMaxValue = function (Array) {
 
 
@@ -54,9 +55,9 @@ window.renderStatistics = function (ctx, names, times) {
         max = time;
       }
     }
-  return max;
-};
-getMaxValue();
+    return max;
+  };
+  getMaxValue();
 
   var histogramWidth = 150; // px;
   var step = histogramWidth / (0 - max); // px;
@@ -69,18 +70,15 @@ getMaxValue();
   var lineHeight = 15; // px;
 
 
-
-
-
-    var drawColumn = function () {
-        for (var i = 0; i < times.length; i++) {
-            ctx.fillStyle = names[i] === 'Вы' ?
-                'rgba(255, 0, 0, 1)' : 'rgba(0, 0, 255,' + Math.random() + ')';
-            ctx.fillRect(initialY + indent *i, initialX - lineHeight, barHeigth, times[i] * step);
-            ctx.fillStyle = '#000';
-            ctx.fillText(Math.round(times[i]), initialY + indent *i, initialX - histogramWidth - 2 * lineHeight);
-            ctx.fillText(names[i], initialY + indent *i, initialX);
-        }
+  var drawColumn = function () {
+    for (var i = 0; i < times.length; i++) {
+      ctx.fillStyle = names[i] === 'Вы' ?
+        'rgba(255, 0, 0, 1)' : 'rgba(0, 0, 255,' + Math.random() + ')';
+      ctx.fillRect(initialY + indent * i, initialX - lineHeight, barHeigth, times[i] * step);
+      ctx.fillStyle = '#000';
+      ctx.fillText(Math.round(times[i]), initialY + indent * i, initialX - histogramWidth - 2 * lineHeight);
+      ctx.fillText(names[i], initialY + indent * i, initialX);
     }
-    drawColumn();
+  };
+  drawColumn();
 };

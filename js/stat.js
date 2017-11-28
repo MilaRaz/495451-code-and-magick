@@ -46,7 +46,7 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Список результатов:', 120, 60);
 
   var getMaxValue = function (array) {
-  var max = -1;
+    var max = -1;
 
     for (var i = 0; i < array.length; i++) {
       var time = array[i];
@@ -57,7 +57,7 @@ window.renderStatistics = function (ctx, names, times) {
     }
     return max;
   };
-  var max = getMaxValue();
+  var max = getMaxValue(times);
 
   var histogramWidth = 150; // px;
   var step = histogramWidth / (0 - max); // px;

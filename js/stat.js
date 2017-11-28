@@ -50,7 +50,6 @@ window.renderStatistics = function (ctx, names, times) {
 
     for (var i = 0; i < array.length; i++) {
       var time = array[i];
-        
       if (time > max) {
         max = time;
       }

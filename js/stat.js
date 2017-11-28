@@ -44,8 +44,8 @@ window.renderStatistics = function (ctx, names, times) {
 
   ctx.fillText('Ура вы победили!', 120, 40);
   ctx.fillText('Список результатов:', 120, 60);
-  var max = -1;
-  var Array;    
+    
+  var max = -1;    
   var getMaxValue = function (Array) {
 
 

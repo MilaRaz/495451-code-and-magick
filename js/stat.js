@@ -44,20 +44,20 @@ window.renderStatistics = function (ctx, names, times) {
 
   ctx.fillText('Ура вы победили!', 120, 40);
   ctx.fillText('Список результатов:', 120, 60);
-    
-  var max = -1;    
-  var getMaxValue = function (Array) {
 
+  var getMaxValue = function (array) {
+  var max = -1;
 
-    for (var i = 0; i < times.length; i++) {
-      var time = times[i];
+    for (var i = 0; i < array.length; i++) {
+      var time = array[i];
+        
       if (time > max) {
         max = time;
       }
     }
     return max;
   };
-  getMaxValue();
+  var max = getMaxValue();
 
   var histogramWidth = 150; // px;
   var step = histogramWidth / (0 - max); // px;

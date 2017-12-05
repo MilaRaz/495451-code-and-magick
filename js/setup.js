@@ -20,7 +20,7 @@ var getRandomNumber = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 var generateWizards = function () {
-  for (var i =0; i <= WIZARD_COUNT; i++) {
+  for (var i = 0; i <= WIZARD_COUNT; i++) {
     wizards [i] =
     {
       name: WIZARD_NAMES[getRandomNumber(0, WIZARD_NAMES.length)] + WIZARD_SURNAMES[getRandomNumber(0, WIZARD_SURNAMES.length)],

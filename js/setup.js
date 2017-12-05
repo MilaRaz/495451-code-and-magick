@@ -20,14 +20,14 @@ var getRandomNumber = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
 var generateWizards = function () {
-    
-    for (var i=0; i<= WIZARD_COUNT; i++)
+  for (var i=0; i <= WIZARD_COUNT; i++){
      wizards [i] = 
     {
       name: WIZARD_NAMES[getRandomNumber(0, WIZARD_NAMES.length)] + WIZARD_SURNAMES[getRandomNumber(0, WIZARD_SURNAMES.length)],
       coatColor: WIZARD_COAT_COLOR[getRandomNumber(0, WIZARD_COAT_COLOR.length)],
       eyesColor: WIZARD_EYES_COLOR[getRandomNumber(0, WIZARD_EYES_COLOR.length)]
     };
+  };
 };
 generateWizards();
 
@@ -39,7 +39,7 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-var renderAllWizards = function (){
+var renderAllWizards = function () {
   var fragment = document.createDocumentFragment();
   for (var i = 0; i < wizards.length; i++) {
     fragment.appendChild(renderWizard(wizards[i]));

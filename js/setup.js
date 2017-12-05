@@ -50,3 +50,4 @@ similarListElement.appendChild(fragment);
 renderAllWizards( );
 
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
+

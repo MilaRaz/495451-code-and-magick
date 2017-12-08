@@ -57,55 +57,55 @@ var setupOpen = document.querySelector('.setup-open');
 var setupClose = setup.querySelector('.setup-close');
 
 
-var onPopupEscPress = function(evt) {
+var onPopupEscPress = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
     closePopup();
   }
 };
 
-var openPopup = function() {
+var openPopup = function () {
   setup.classList.remove('hidden');
   document.addEventListener('keydown', onPopupEscPress);
 };
 
-var closePopup = function() {
+var closePopup = function () {
   setup.classList.add('hidden');
   document.removeEventListener('keydown', onPopupEscPress);
 };
 
-setupOpen.addEventListener('click', function() {
+setupOpen.addEventListener('click', function () {
   openPopup();
 });
 
-setupOpen.addEventListener('keydown', function(evt) {
+setupOpen.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     openPopup();
   }
 });
 
-setupClose.addEventListener('click', function() {
+setupClose.addEventListener('click', function () {
   closePopup();
 });
 
-setupClose.addEventListener('keydown', function(evt) {
+setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     closePopup();
   }
 });
 
 var btnSetupSubmit = setup.querySelector('.setup-submit');
-btnSetupSubmit.addEventListener('click', function(evt) {
+btnSetupSubmit.addEventListener('click', function () {
   closePopup();
 });
 
-btnSetupSubmit.addEventListener('keydown', function(evt) {
+btnSetupSubmit.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     closePopup();
   }
 });
 
 var userNameInput = setup.querySelector('.setup-user-name');
-userNameInput.addEventListener('invalid', function (evt) {
+userNameInput.addEventListener('invalid', function () {
   if (userNameInput.validity.tooShort) {
     userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
   } else if (userNameInput.validity.tooLong) {
@@ -126,11 +126,11 @@ userNameInput.addEventListener('input', function (evt) {
   }
 });
 
-var coatColor = function() {
+var coatColor = function () {
   document.querySelector('.setup-wizard .wizard-coat').style.fill = WIZARD_COAT_COLOR[getRandomNumber(0, WIZARD_COAT_COLOR.length)];
 };
 
-var eyesColor = function() {
+var eyesColor = function () {
   document.querySelector('.setup-wizard .wizard-eyes').style.fill = WIZARD_EYES_COLOR[getRandomNumber(0, WIZARD_EYES_COLOR.length)];
 };
 

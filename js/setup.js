@@ -54,7 +54,6 @@ var setup = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
 var setupClose = setup.querySelector('.setup-close');
 
-//var selectedTextArea = document.activeElement;
 var onPopupEscPress = function (evt) {
     if (userNameInput === document.activeElement){
         preventDefault();
@@ -105,15 +104,7 @@ btnSetupSubmit.addEventListener('keydown', function (evt) {
     closePopup();
   }
 });
-    
-//userNameInput.addEventListener("keydown", onPopupEscPress); 
-     
-    //preventDefault();
-  //});
-    
-//userNameInput.removeEventListener('keydown', openPopup);
 
-//}
 var userNameInput = setup.querySelector('.setup-user-name');
 userNameInput.addEventListener('invalid', function () {
   if (userNameInput.validity.tooShort) {
@@ -142,12 +133,12 @@ var setupcoatColor = function (evt) {
   evt.currentTarget.style.fill = WIZARD_COAT_COLOR[getRandomNumber(0, WIZARD_COAT_COLOR.length)];
 };
 
-var setupeyesColor = function () {
-  document.querySelector('.setup-wizard .wizard-eyes').style.fill = WIZARD_EYES_COLOR[getRandomNumber(0, WIZARD_EYES_COLOR.length)];
+var setupeyesColor = function (evt) {
+  evt.currentTarget.style.fill = WIZARD_EYES_COLOR[getRandomNumber(0, WIZARD_EYES_COLOR.length)];
 };
 
-var setupfireballColor = function () {
-  document.querySelector('.setup-fireball-wrap').style.background = WIZARD_FIREBALL_COLOR[getRandomNumber(0, WIZARD_FIREBALL_COLOR.length)];
+var setupfireballColor = function (evt) {
+  evt.currentTarget.style.background = WIZARD_FIREBALL_COLOR[getRandomNumber(0, WIZARD_FIREBALL_COLOR.length)];
 };
 
 var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
@@ -156,12 +147,12 @@ wizardCoat.addEventListener('click', function (evt) {
 });
 
 var wizardEyes = document.querySelector('.wizard-eyes');
-wizardEyes.addEventListener('click', function () {
-  setupeyesColor();
+wizardEyes.addEventListener('click', function (evt) {
+  setupeyesColor(evt);
 });
 
 var wizardFireball = document.querySelector('.setup-fireball-wrap');
-wizardFireball.addEventListener('click', function () {
-  setupfireballColor();
+wizardFireball.addEventListener('click', function (evt) {
+  setupfireballColor(evt);
 });
 

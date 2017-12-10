@@ -55,13 +55,12 @@ var setupOpen = document.querySelector('.setup-open');
 var setupClose = setup.querySelector('.setup-close');
 
 var onPopupEscPress = function (evt) {
-    if (userNameInput === document.activeElement){
-        preventDefault();
-    }
+  if (userNameInput === document.activeElement) {
+    preventDefault(evt);
+  }
   if (evt.keyCode === ESC_KEYCODE) {
     closePopup();
-  }
-    
+  }   
 };
 
 var openPopup = function () {
@@ -117,8 +116,6 @@ userNameInput.addEventListener('invalid', function () {
     userNameInput.setCustomValidity('');
   }
 });
-
-
 
 userNameInput.addEventListener('input', function (evt) {
   var target = evt.target;

@@ -55,7 +55,7 @@ var setupOpen = document.querySelector('.setup-open');
 var setupClose = setup.querySelector('.setup-close');
 
 var onPopupEscPress = function (evt) {
-if (userNameInput !== document.activeElement) {
+  if (userNameInput !== document.activeElement) {
     if (evt.keyCode === ESC_KEYCODE) {
       closePopup();
     }

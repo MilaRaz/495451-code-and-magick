@@ -55,11 +55,10 @@ var setupOpen = document.querySelector('.setup-open');
 var setupClose = setup.querySelector('.setup-close');
 
 var onPopupEscPress = function (evt) {
-  if (userNameInput === document.activeElement) {
-    preventDefault ();
-  }
-  if (evt.keyCode === ESC_KEYCODE) {
-    closePopup();
+if (userNameInput !== document.activeElement) {
+    if (evt.keyCode === ESC_KEYCODE) {
+      closePopup();
+    }
   }
 };
 
